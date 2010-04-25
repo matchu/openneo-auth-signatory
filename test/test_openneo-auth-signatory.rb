@@ -2,7 +2,7 @@ require 'helper'
 
 class TestOpenneoAuthSignatory < Test::Unit::TestCase
   def setup
-    @signatory = OpenneoAuthSignatory.new('MySecret32!!')
+    @signatory = Openneo::Auth::Signatory.new('MySecret32!!')
   end
   
   def test_sign
