@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/openneo-auth-signatory.rb",
+     "openneo-auth-signatory.gemspec",
      "test/helper.rb",
      "test/test_openneo-auth-signatory.rb"
   ]
