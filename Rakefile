@@ -5,11 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "openneo-auth-signatory"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Sign messages for the OpenNeo Auth protocol}
+    gem.description = %Q{Used by OpenNeo Auth servers to sign messages, and OpenNeo Auth clients to confirm signatures.}
     gem.email = "matchu1993@gmail.com"
     gem.homepage = "http://github.com/matchu/openneo-auth-signatory"
     gem.authors = ["Matchu"]
+    gem.add_dependency("ruby-hmac")
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
