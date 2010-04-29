@@ -35,4 +35,11 @@ class TestOpenneoAuthSignatory < Test::Unit::TestCase
     assert_signature signature, :a => 1, :b => 2, :c => 3
     assert_signature signature, :c => 3, :b => 2, :a => 1
   end
+  
+  def test_nested_hash
+    assert_signature(
+      '8aa5f3b84750d0f8b67e1f9cc30010906457f576b22a82d6f5408c60fa9ede57',
+      :hello => 'world', :foo => {:bar => 1, :baz => 2}
+    )
+  end
 end

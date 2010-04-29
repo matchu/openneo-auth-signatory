@@ -21,9 +21,15 @@ end
 # concise.
 
 class Hash
-  def to_query
+  def to_query(namespace = nil)
     collect do |key, value|
-      "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
+      value.to_query(namespace ? "#{namespace}[#{key}]" : key)
     end.sort * '&'
+  end
+end
+
+class Object
+  def to_query(key)
+    "#{CGI.escape(key.to_s)}=#{CGI.escape(to_s)}"
   end
 end
