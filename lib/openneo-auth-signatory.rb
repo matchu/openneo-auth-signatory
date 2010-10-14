@@ -10,26 +10,27 @@ module Openneo
       end
       
       def sign(data)
-        @hmac << data.to_query
+        @hmac << data.to_openneo_auth_query
         @hmac.hexdigest
       end
     end
   end
 end
+
 # The following extension used to be present in ActiveSupport, but was removed
 # in version 3. The code has been modified to be more generic and therefore
 # concise.
 
 class Hash
-  def to_query(namespace = nil)
+  def to_openneo_auth_query(namespace = nil)
     collect do |key, value|
-      value.to_query(namespace ? "#{namespace}[#{key}]" : key)
+      value.to_openneo_auth_query(namespace ? "#{namespace}[#{key}]" : key)
     end.sort * '&'
   end
 end
 
 class Object
-  def to_query(key)
+  def to_openneo_auth_query(key)
     "#{CGI.escape(key.to_s)}=#{CGI.escape(to_s)}"
   end
 end
