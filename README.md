@@ -16,3 +16,5 @@ rather than some hacker trying to send his or her own fake message.
     signature = signatory.sign(message)
     
     puts signature # => 22dc5ff40bcf9ece92f8b6cf6542b05750aea9379d27e048b32ec02a65e33641
+
+Copyright (c) 2010 Matchu. See LICENSE for details.
